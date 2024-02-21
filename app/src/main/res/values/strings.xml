@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EverythingIO</string>
+    <string name="title_activity_buttons_compose">ButtonsComposeActivity</string>
+</resources>
