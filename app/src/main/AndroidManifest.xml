@@ -14,12 +14,12 @@
         android:theme="@style/Theme.EverythingIO"
         tools:targetApi="31">
         <activity
-            android:name=".buttonpage.ButtonsComposeActivity"
+            android:name=".presentation.buttonpage.ButtonsComposeActivity"
             android:exported="false"
             android:label="@string/title_activity_buttons_compose"
             android:theme="@style/Theme.EverythingIO" />
         <activity
-            android:name=".homepage.MainActivity"
+            android:name=".presentation.homepage.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

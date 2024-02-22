@@ -10,10 +10,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".presentation.homepage.MainActivity">
 
-        <!-- Touch Motion Data-->
+        <!-- Touch Motion Data -->
         <LinearLayout
+            android:id="@+id/llTouchMotionDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.5"
@@ -50,7 +51,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:alpha="0.5"
+            android:alpha="0.3"
             android:background="#dddddd"
             android:orientation="vertical"
             android:padding="10dp"
@@ -101,11 +102,21 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:padding="10dp"
-                android:text="Navigate A"
+                android:padding="5dp"
+                android:text="DialogAlert"
                 tools:ignore="HardcodedText"
                 style="?android:attr/buttonBarStyle" />
 
+            <Button
+                android:id="@+id/btnNavigateC"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="BottomSheet"
+                tools:ignore="HardcodedText"
+                style="?android:attr/buttonBarStyle" />
 
             <Button
                 android:id="@+id/btnNavigateToActivity"
@@ -113,8 +124,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:padding="10dp"
-                android:text="Activity\nNavigation"
+                android:padding="5dp"
+                android:text="Next"
                 tools:ignore="HardcodedText"
                 android:drawableEnd="@drawable/ic_android_white_24dp"
                 style="?android:attr/buttonStyle" />
@@ -122,4 +133,5 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

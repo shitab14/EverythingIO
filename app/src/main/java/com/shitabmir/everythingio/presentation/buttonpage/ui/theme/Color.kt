@@ -1,4 +1,4 @@
-package com.shitabmir.everythingio.buttonpage.ui.theme
+package com.shitabmir.everythingio.presentation.buttonpage.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

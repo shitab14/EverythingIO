@@ -1,4 +1,4 @@
-package com.shitabmir.everythingio.buttonpage
+package com.shitabmir.everythingio.presentation.buttonpage
 
 import android.os.Bundle
 import android.widget.Toast
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.shitabmir.everythingio.buttonpage.ui.theme.EverythingIOTheme
+import com.shitabmir.everythingio.presentation.buttonpage.ui.theme.EverythingIOTheme
 
 class ButtonsComposeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,8 +1,7 @@
-package com.shitabmir.everythingio
+package com.shitabmir.everythingio.presentation.homepage
 
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.text.Spannable
@@ -10,24 +9,30 @@ import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import android.view.MotionEvent
 import android.view.View
-import androidx.databinding.DataBindingUtil
-import com.shitabmir.everythingio.buttonpage.ButtonsComposeActivity
+import androidx.fragment.app.FragmentManager
+import com.shitabmir.everythingio.R
+import com.shitabmir.everythingio.base.BaseActivity
 import com.shitabmir.everythingio.databinding.ActivityMainBinding
+import com.shitabmir.everythingio.presentation.buttonpage.ButtonsComposeActivity
+import com.shitabmir.everythingio.presentation.dialog.CustomBottomSheetFragment
+import com.shitabmir.everythingio.presentation.dialog.MyDialogFragment
 import io.reactivex.rxjava3.subjects.PublishSubject
 
-class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-
+class MainActivity : BaseActivity<ActivityMainBinding>() {
     private val lifecycleTextSpannableBuilder = SpannableStringBuilder()
     private val touchMotionTextSpannableBuilder = SpannableStringBuilder()
+
+    override val layoutResourceId: Int
+        get() = R.layout.activity_main
 
     // -------------------------------- <Android Lifecycle> ----------------------------------------
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+//        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
         setupClicks()
         updateLifeCycleText("\nonCreate")
 
@@ -93,6 +98,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     // -------------------------------------- My Methods ------------------------------------------
+    private fun showMyDialog() {
+        val dialogFragment = MyDialogFragment()
+
+        val fragmentManager: FragmentManager = supportFragmentManager
+        dialogFragment.show(fragmentManager, "MyDialogFragment")
+    }
+
+    private fun showBottomSheet() {
+        val bottomSheetFragment = CustomBottomSheetFragment()
+        val fragmentManager = supportFragmentManager
+        bottomSheetFragment.show(fragmentManager, "CustomBottomSheetFragment")
+    }
+
     private fun updateLifeCycleText(text: String) {
         lifecycleTextSpannableBuilder.setSpan(ForegroundColorSpan(Color.DKGRAY), 0, lifecycleTextSpannableBuilder.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
         lifecycleTextSpannableBuilder.insert(0, text)
@@ -113,7 +131,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupClicks() {
         binding.btnNavigateA.setOnClickListener {
-
+            showMyDialog()
+        }
+        binding.btnNavigateC.setOnClickListener {
+            showBottomSheet()
         }
 
         binding.btnNavigateToActivity.setOnClickListener {
